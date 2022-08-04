@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'dart:html';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter/material.dart';
@@ -45,14 +47,14 @@ class ProgressPage extends StatelessWidget {
               width: 450,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                color: Color.fromARGB(255, 129, 218, 224)
+                color: Color.fromARGB(255, 198, 231, 234)
               ),
              ),
              Container(
               margin: EdgeInsets.only(top: 10,right: 400),
               child: Text("Badges",
               style: TextStyle(color:Color.fromARGB(255, 13, 38, 59),
-              fontSize: 17,
+              fontSize: 20,
               fontWeight: FontWeight.bold
               ),
               ),
@@ -62,16 +64,38 @@ class ProgressPage extends StatelessWidget {
              ),
             Container(
             
-              height:180,
+              height:120,
               child: Badges(),
             ),
              Container(
-              height: 300,
-              width: 450,
-              margin: EdgeInsets.only(bottom: 0),  
+              height: 450,
+              width: 480,
+              margin: EdgeInsets.only(bottom: 0,top:0),  
              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 159, 186, 232),
+                color: Color.fromARGB(255, 195, 235, 242),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight:Radius.circular(30) )
              ),
+            child:Container(
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 0,right: 250,top: 15),
+                    child: Text("Achievements",
+                    style: TextStyle(
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      color:Color.fromARGB(255, 13, 38, 59),
+                    ),
+                    )),
+                  Container(
+                    height: 360,
+              width: 460,
+              margin: EdgeInsets.only(bottom: 0,top:10),
+                    child: Achivments(),
+                  )
+                ],
+              ),
+            ),
             )       
           ],
         ),
@@ -110,7 +134,10 @@ class _BadgesState extends State<Badges> {
                   ),
                   child: Image.asset("images/math.png"),
                 ),
-                Text("Maths"),
+                SizedBox(
+                  height: 4,
+                ),
+                Text("Maths",style: TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
           ),           
@@ -129,7 +156,10 @@ class _BadgesState extends State<Badges> {
                   ),
                   child: Image.asset("images/sc.png"),
                 ),
-                Text("Scince"),
+                SizedBox(
+                  height: 4,
+                ),
+                Text("Scince",style: TextStyle(fontWeight: FontWeight.bold),),
               ],
             ),
           ),         
@@ -148,7 +178,10 @@ class _BadgesState extends State<Badges> {
                   ),
                   child: Image.asset("images/price.png"),
                 ),
-              Text("Acivment"),
+                SizedBox(
+                  height: 4,
+                ),
+              Text("Goal",style: TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
           ),         
@@ -167,7 +200,10 @@ class _BadgesState extends State<Badges> {
                   ),
                   child: Image.asset("images/lern.png"),
                 ),
-                Text("Learing"),
+                SizedBox(
+                  height: 4,
+                ),
+                Text("Learer",style: TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
           ),         
@@ -186,7 +222,10 @@ class _BadgesState extends State<Badges> {
                   ),
                   child: Image.asset("images/book.png"),
                 ),
-                Text("Reading"),
+                SizedBox(
+                  height: 4,
+                ),
+                Text("Reading",style: TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
           ),  
@@ -205,7 +244,10 @@ class _BadgesState extends State<Badges> {
                   ),
                   child: Image.asset("images/draw.png"),
                 ),
-                Text("Drawing"),
+                SizedBox(
+                  height: 4,
+                ),
+                Text("Drawing",style: TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
           ),         
@@ -214,5 +256,60 @@ class _BadgesState extends State<Badges> {
 
       ),
     );
+  }
+}
+
+
+class Achivments extends StatelessWidget {
+  const Achivments({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+   return ListView(
+    scrollDirection: Axis.vertical,
+    children: [
+          Container(
+            margin: EdgeInsets.only(top: 30,left: 10,right: 10),
+            height: 75,
+            width: 400,
+              decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color: Color.fromARGB(232, 255, 255, 255),
+                  ),
+                  child: Row(
+                    children: [
+                      Image.asset("images/b2.png",height: 60,),
+                      Text("Fast Learner of Week")
+                    ],
+                  ),
+          ),
+                   Container(
+            margin: EdgeInsets.only(top: 30,left: 10,right: 10),
+            height: 75,
+            width: 400,
+              decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color:  Color.fromARGB(232, 255, 255, 255),
+                  ),
+                   ),
+                   Container(
+            margin: EdgeInsets.only(top: 30,left: 10,right: 10),
+            height: 75,
+            width: 400,
+              decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color:  Color.fromARGB(232, 255, 255, 255),
+                  ),
+                   ),
+                 Container(
+            margin: EdgeInsets.only(top: 30,left: 10,right: 10),
+            height: 75,
+            width: 400,
+              decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color:  Color.fromARGB(232, 255, 255, 255),
+                  ),
+               ),
+              ],);
   }
 }
